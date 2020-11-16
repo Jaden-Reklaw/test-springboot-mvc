@@ -1,8 +1,17 @@
 package mvc.models;
 
+import javax.persistence.*;
+
+@Entity
 public class ContactModel {
     //region Fields
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer contactId;
+
+    @Version
+    private Integer version;
+
     private String firstName;
     private String lastName;
     private String address;
